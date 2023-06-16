@@ -63,16 +63,29 @@ export class NFTMinted extends Entity {
     this.set("tokenId", Value.fromBigInt(value));
   }
 
-  get owner(): Bytes {
+  get owner(): string {
     let value = this.get("owner");
     if (!value || value.kind == ValueKind.NULL) {
       throw new Error("Cannot return null for a required field.");
     } else {
-      return value.toBytes();
+      return value.toString();
     }
   }
 
-  set owner(value: Bytes) {
-    this.set("owner", Value.fromBytes(value));
+  set owner(value: string) {
+    this.set("owner", Value.fromString(value));
+  }
+
+  get sender(): string {
+    let value = this.get("sender");
+    if (!value || value.kind == ValueKind.NULL) {
+      throw new Error("Cannot return null for a required field.");
+    } else {
+      return value.toString();
+    }
+  }
+
+  set sender(value: string) {
+    this.set("sender", Value.fromString(value));
   }
 }

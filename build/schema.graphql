@@ -1,10 +1,13 @@
 type NFTMinted @entity {
   id: ID!
   tokenId: BigInt! # uint256
-  owner: Bytes! # address
+  owner: String! # address
+  sender: String!
+  # owner: User! # address
+  # sender: User!
 }
 
 # type User @entity {
-#   recipient: Bytes! @derivedFrom(field: "recipient")
-#   tokens: [NFTMinted!]! @derivedFrom(field: "recipient")
+#   id: ID!
+#   nfts: [NFTMinted!]! @derivedFrom(field: "sender")
 # }

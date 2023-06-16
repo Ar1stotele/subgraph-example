@@ -1,0 +1,7 @@
+{
+  nftminteds(where: {  id: 3  }) {
+    id
+    tokenId
+    owner
+  }
+}
